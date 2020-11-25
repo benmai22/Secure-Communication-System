@@ -1,0 +1,4 @@
+openssl genrsa -out mykey.pem 2048
+
+openssl pkcs8 -topk8 -inform PEM -outform DER -in mykey.pem -out private_key.der -nocrypt
+openssl rsa -in mykey.pem -pubout -outform DER -out public_key.der
